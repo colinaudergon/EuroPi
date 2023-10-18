@@ -1,0 +1,287 @@
+def BPM_Printer():
+    global tempo
+    # Convert time to BPM
+    bpm = (60 * 1000) / tempo
+    print("BPM: " + str(bpm))
+
+    # Display the BPM on the seven-segment display
+    digits = [int(d) for d in str(int(bpm)).zfill(3)]  # convert to list of digits
+    for i, digit in enumerate(digits):
+        # turn off all segments and select the i-th digit
+        for pin in led_pin:
+            pin.value(1)
+        select[i].value(0)
+        time.sleep(0.001)  # delay to avoid ghosting
+        # display the digit
+        if digit == 0:
+            zero()
+        elif digit == 1:
+            one()
+        elif digit == 2:
+            two()
+        elif digit == 3:
+            three()
+        elif digit == 4:
+            four()
+        elif digit == 5:
+            five()
+        elif digit == 6:
+            six()
+        elif digit == 7:
+            seven()
+        elif digit == 8:
+            eight()
+        elif digit == 9:
+            nine()
+        time.sleep(0.005)  # delay to display the digit
+        # turn off the segments and select the next digit
+        for pin in led_pin:
+            pin.value(1)
+        select[i].value(1)
+        time.sleep(0.001)  # delay to avoid ghosting
+######################################
+def BPM_Printer():
+    global time
+    #converstion between time and BPM 
+    bpm=(60*1000)/tempo
+    print("BPM: " + str(bpm))
+
+##################3
+#test digits
+pin.value(1)
+    zero()
+    time.sleep(0.5)
+    one()
+    time.sleep(0.5)
+    two()
+    time.sleep(0.5)
+    three()
+    time.sleep(0.5)
+    four()
+    time.sleep(0.5)
+    five()
+    time.sleep(0.5)
+    six()
+    time.sleep(0.5)
+    seven()
+    time.sleep(0.5)
+    eight()
+    time.sleep(0.5)
+    nine()
+    time.sleep(0.5)
+    pin.value(0)
+
+#############
+if digit == 0:
+            zero()
+        elif digit == 1:
+            one()
+        elif digit == 2:
+            two()
+        elif digit == 3:
+            three()
+        elif digit == 4:
+            four()
+        elif digit == 5:
+            five()
+        elif digit == 6:
+            six()
+        elif digit == 7:
+            seven()
+        elif digit == 8:
+            eight()
+        elif digit == 9:
+            nine()
+        time.sleep(0.005)  # delay to display the digit
+
+
+#
+
+def display_bpm(bpm):
+    digits = []
+    while bpm > 0:
+        digits.append(bpm % 10)
+        bpm //= 10
+    digits = digits[::-1] if digits else [0]  # reverse list and pad with 0 if empty
+    for i, digit in enumerate(digits):
+        # turn off all segments and select the i-th digit
+        for pin in led_pin:
+            pin.value(1)
+        select[i].value(0)
+        time.sleep(0.001)  # delay to avoid ghosting
+        # display the digit
+        if digit == 0:
+            zero()
+        elif digit == 1:
+            one()
+        elif digit == 2:
+            two()
+        elif digit == 3:
+            three()
+        elif digit == 4:
+            four()
+        elif digit == 5:
+            five()
+        elif digit == 6:
+            six()
+        elif digit == 7:
+            seven()
+        elif digit == 8:
+            eight()
+        elif digit == 9:
+            nine()
+        time.sleep(0.005)  # delay to display the digit
+        # turn off the segments and select the next digit
+        for pin in led_pin:
+            pin.value(1)
+        select[i].value(1)
+        time.sleep(0.001)  # delay to avoid ghosting
+##############
+def zero():
+    for pin in led_pin:
+        pin.value(1)
+    zero=[a,b,c,d,e,f]
+    
+    for pin in zero:
+        pin.value(0)
+        
+def one():
+    for pin in led_pin:
+        pin.value(1)
+    one=[b,c]
+    
+    for pin in one:
+        pin.value(0)
+        
+def two():
+    for pin in led_pin:
+        pin.value(1)
+    two=[a,b,d,e,g]
+    
+    for pin in two:
+        pin.value(0)
+        
+def three():
+    for pin in led_pin:
+        pin.value(1)
+    three=[a,b,c,d,g]
+    
+    for pin in three:
+        pin.value(0)
+        
+def four():
+    for pin in led_pin:
+        pin.value(1)
+    four=[b,c,f,g]
+    
+    for pin in four:
+        pin.value(0)
+        
+def five():
+    for pin in led_pin:
+        pin.value(1)
+    five=[a,c,d,f,g]
+    
+    for pin in five:
+        pin.value(0)
+        
+def six():
+    for pin in led_pin:
+        pin.value(1)
+    six=[a,c,d,e,f,g]
+    
+    for pin in six:
+        pin.value(0)
+
+def seven():
+    for pin in led_pin:
+        pin.value(1)
+    seven=[a,b,c]
+    
+    for pin in seven:
+        pin.value(0)
+        
+def eight():
+    for pin in led_pin:
+        pin.value(1)
+    eight=[a,b,c,d,e,f,g]
+    
+    for pin in eight:
+        pin.value(0)
+
+def nine():
+    for pin in led_pin:
+        pin.value(1)
+    nine=[a,b,c,d,f,g]
+    
+    for pin in nine:
+        pin.value(0)
+######3
+def zero():
+    a.value(0)
+    b.value(0)
+    c.value(0)
+    d.value(0)
+    e.value(0)
+    f.value(0)
+
+def one():
+    b.value(0)
+    c.value(0)
+
+def two():
+    a.value(0)
+    b.value(0)
+    d.value(0)
+    e.value(0)
+    g.value(0)
+
+def three():
+    a.value(0)
+    b.value(0)
+    c.value(0)
+    d.value(0)
+    g.value(0)
+
+def four():
+    b.value(0)
+    c.value(0)
+    f.value(0)
+    g.value(0)
+
+def five():
+    a.value(0)
+    c.value(0)
+    d.value(0)
+    f.value(0)
+    g.value(0)
+
+def six():
+    a.value(0)
+    c.value(0)
+    d.value(0)
+    e.value(0)
+    f.value(0)
+    g.value(0)
+
+def seven():
+    a.value(0)
+    b.value(0)
+    c.value(0)
+
+def eight():
+    a.value(0)
+    b.value(0)
+    c.value(0)
+    d.value(0)
+    e.value(0)
+    f.value(0)
+    g.value(0)
+
+def nine():
+    a.value(0)
+    b.value(0)
+    c.value(0)
+    d.value(0)
+    f.value(0)
+    g.value(0)
